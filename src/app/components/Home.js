@@ -1,8 +1,35 @@
+"use client";
 import Image from "next/image";
-
+import { useState } from "react";
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
+    {isModalOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+    
+    {/* Modal Box */}
+    <div className="relative w-full max-w-3xl bg-black rounded-lg overflow-hidden">
+      
+      {/* Close Button */}
+      <button
+        onClick={() => setIsModalOpen(false)}
+        className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 rounded-full w-8 h-8 flex items-center justify-center z-50"
+      >
+        ✕
+      </button>
+
+      {/* YouTube Video */}
+      <iframe
+        className="w-full h-[400px] sm:h-[500px]"
+        src="https://www.youtube.com/embed/hpnCZVIDnos"
+        title="Video"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+      />
+    </div>
+  </div>
+)}
       {/* NAVBAR */}
       <nav className="bg-white shadow-sm fixed top-0 left-0 right-0 w-full z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -131,19 +158,25 @@ export default function Home() {
               >
                 🍽️ Explore Menu
               </a>
-              <a href="#" className="flex items-center gap-3 group">
-                <div className="w-12 h-12 rounded-full border-2 border-gray-200 flex items-center justify-center group-hover:border-[#E8380D] transition-colors">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-gray-700 group-hover:text-[#E8380D] transition-colors"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <span className="font-semibold text-gray-800 text-sm">Watch Our Story</span>
-              </a>
+              <a
+  onClick={() => setIsModalOpen(true)}
+  className="flex items-center gap-3 group cursor-pointer"
+>
+  <div className="w-12 h-12 rounded-full border-2 border-gray-200 flex items-center justify-center group-hover:border-[#E8380D] transition-colors">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-5 w-5 text-gray-700 group-hover:text-[#E8380D] transition-colors"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M8 5v14l11-7z" />
+    </svg>
+  </div>
+
+  <span className="font-semibold text-gray-800 text-sm">
+    Watch Our Story
+  </span>
+</a>
             </div>
 
             {/* Stats */}
@@ -213,74 +246,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      
-
-      {/* MARQUEE TICKER */}
-      <div className="bg-[#E8380D] py-3 overflow-hidden">
-        <div className="flex animate-marquee whitespace-nowrap">
-          {[...Array(3)].map((_, gi) => (
-            <div key={gi} className="flex items-center">
-              {[
-                "Ice Cream Shakes",
-                "Grilled Sandwiches",
-                "Crispy Fried Chicken",
-                "Gourmet Burgers",
-                "Artisan Pizzas",
-                "Fresh Wraps & Rolls",
-                "Loaded Fries",
-              ].map((item) => (
-                <span
-                  key={item + gi}
-                  className="flex items-center gap-2 text-white text-sm font-medium mx-6"
-                >
-                  <span className="w-2 h-2 rounded-full bg-white opacity-70 inline-block"></span>
-                  {item}
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* BROWSE BY CATEGORY */}
-      <section className="bg-[#FDF5EE] py-16 px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <p className="text-[#E8380D] font-semibold text-lg italic mb-2" style={{fontFamily: 'Georgia, serif'}}>What We Offer</p>
-          <h2 className="text-4xl sm:text-5xl font-black text-gray-900">
-            Browse by <span className="text-[#E8380D]">Category</span>
-          </h2>
-          <div className="w-16 h-1 bg-[#E8380D] mx-auto mt-3 mb-4 rounded-full"></div>
-          <p className="text-gray-500 text-base max-w-md mx-auto leading-relaxed">
-            From sizzling burgers to exotic world cuisines - find your favourite in our menu
-          </p>
-        </div>
-
-        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-          {[
-            { name: "All Items", count: "99 Items", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80", active: true },
-            { name: "Burgers", count: "24 Items", img: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=200&q=80", active: false },
-            { name: "Pizza", count: "18 Items", img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80", active: false },
-            { name: "Fried Chicken", count: "15 Items", img: "https://images.unsplash.com/photo-1562967914-608f82629710?w=200&q=80", active: false },
-            { name: "Wraps", count: "12 Items", img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=200&q=80", active: false },
-            { name: "Desserts", count: "20 Items", img: "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=200&q=80", active: false },
-          ].map((cat) => (
-            <div
-              key={cat.name}
-              className={`bg-white rounded-2xl p-4 flex flex-col items-center gap-3 cursor-pointer transition-all hover:shadow-lg ${
-                cat.active ? "border-2 border-[#E8380D] shadow-md" : "border border-gray-100"
-              }`}
-            >
-              <div className="w-20 h-20 rounded-full overflow-hidden shadow-md">
-                <img src={cat.img} alt={cat.name} className="w-full h-full object-cover" />
-              </div>
-              <div className="text-center">
-                <p className="font-semibold text-gray-900 text-sm">{cat.name}</p>
-                <p className="text-xs text-gray-400">{cat.count}</p>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
       </main>
