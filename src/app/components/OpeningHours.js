@@ -121,7 +121,7 @@ export default function OpeningHours() {
                 <span className="text-amber-400 text-base mt-0.5">🏢</span>
                 <div>
                   <h5 className="text-white/40 text-[9px] font-bold uppercase tracking-wider">Address</h5>
-                  <p className="text-white font-bold text-xs sm:text-sm tracking-wide mt-0.5">42 Flavor Street, NY</p>
+                  <p className="text-white font-bold text-xs sm:text-sm tracking-wide mt-0.5">Duip abashik,Mirpur-2</p>
                 </div>
               </div>
 
@@ -130,7 +130,7 @@ export default function OpeningHours() {
                 <span className="text-amber-400 text-base mt-0.5">📞</span>
                 <div>
                   <h5 className="text-white/40 text-[9px] font-bold uppercase tracking-wider">Phone</h5>
-                  <p className="text-white font-bold text-xs sm:text-sm tracking-wide mt-0.5">+1 (800) 123-4567</p>
+                  <p className="text-white font-bold text-xs sm:text-sm tracking-wide mt-0.5">01889804917</p>
                 </div>
               </div>
 

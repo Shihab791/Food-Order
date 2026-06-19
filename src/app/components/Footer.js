@@ -87,7 +87,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <h4 className="text-white text-xs font-bold uppercase tracking-wider">Address</h4>
-                  <p className="text-gray-400 text-xs font-medium mt-0.5 leading-snug">42 Flavor Street, Manhattan, NY 10001</p>
+                  <p className="text-gray-400 text-xs font-medium mt-0.5 leading-snug">Duip abashik,Mirpur-2</p>
                 </div>
               </div>
 
@@ -98,7 +98,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <h4 className="text-white text-xs font-bold uppercase tracking-wider">Phone</h4>
-                  <p className="text-gray-400 text-xs font-medium mt-0.5">+1 (800) 123-4567</p>
+                  <p className="text-gray-400 text-xs font-medium mt-0.5">01889804917</p>
                 </div>
               </div>
 
@@ -109,7 +109,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <h4 className="text-white text-xs font-bold uppercase tracking-wider">Email</h4>
-                  <p className="text-gray-400 text-xs font-medium mt-0.5 break-all">hello@sarabfood.com</p>
+                  <p className="text-gray-400 text-xs font-medium mt-0.5 break-all">mdshihab8007@gmail.com</p>
                 </div>
               </div>
 
